@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+  --hue: 195;
+  --primary-color: hsl(var(--hue), 91%, 25%);
+  --button-color: hsl(var(--hue), 91%, 25%);
+  --button-hover-color: hsl(var(--hue), 50%, 22%);
+  --logo-color: hsl(var(--hue), 46%, 40%);
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  color: #121214;
+  background-color: var(--primary-color);
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 160%;
+  color: #202024;
+}
+
+/* HEADER */
+header {
+  margin: auto;
+  max-width: 120rem;
+}
+nav {
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 2.6rem;
+  padding: 1.2rem 2.8rem;
+}
+
+.logo {
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo svg path {
+  fill: var(--logo-color);
+}
+
+.input-wrapper {
+  flex: 1;
+}
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.input-wrapper input {
+  width: 100%;
+  font-weight: 600;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: rgb(255, 255, 255, 20%);
+  color: white;
+}
+
+.input-wrapper input::-webkit-input-placeholder {
+  color: white;
+}
+
+.input-wrapper input:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+.input-wrapper input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+.input-wrapper input:-ms-input-placeholder {
+  color: white;
+}
+
+.input-wrapper input:focus {
+  outline: 1px solid white;
+}
+
+.avatar {
+  height: 4.2rem;
+  width: 4.2rem;
+  border-radius: 50%;
+}
+/* PAGE */
+#bg-color {
+  background-color: white;
+}
+#page {
+  background-color: white;
+}
+
+#page > img {
+  width: 100%;
+  animation: appear 1s forwards;
+}
+
+/* MAIN */
+main {
+  padding: 3.6rem 2.2rem;
+}
+main h1 {
+  padding: 0;
+}
+
+section .button-wrapper {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3.2rem;
+}
+
+section button {
+  display: flex;
+  background-color: var(--button-color);
+  border-radius: 50%;
+  border: none;
+  padding: 1.2rem;
+}
+
+section button:hover {
+  cursor: pointer;
+  background-color: var(--button-hover-color);
+}
+
+section button img {
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+section p {
+  line-height: 160%;
+  font-size: 1.6rem;
+}
+
+/* ASIDE */
+aside {
+  padding: 0 2.2rem 3.6rem;
+}
+
+aside section {
+  margin-top: 3.2rem;
+}
+
+aside .article {
+  margin-bottom: 3.2rem;
+  display: flex;
+  gap: 1.6rem;
+  justify-content: flex-start;
+  text-align: left;
+}
+aside .article {
+  height: 8.4rem;
+}
+aside .article h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+aside .article p {
+  font-size: 1.4rem;
+}
+
+aside .article img:hover {
+  animation: focus 1s forwards;
+}
+
+/* FOOTER */
+
+footer {
+  height: 6.4rem;
+  background-color: var(--primary-color);
+
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+
+  padding: 2.6rem 1.6rem;
+}
+
+@keyframes focus {
+  100% {
+    transform: rotate(003deg) scale(1.1);
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0);
+    border-radius: 50%;
+  }
+
+  100% {
+    transform: scale(1);
+    border-radius: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  #page {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "image aside"
+      "main aside";
+    padding: 4.4rem;
+    gap: 3.6rem;
+    margin: 0 auto;
+    max-width: 120rem;
+  }
+  img {
+    grid-area: image;
+    max-width: 100%;
+    height: auto;
+  }
+
+  main {
+    grid-area: main;
+    padding: 0;
+  }
+
+  aside {
+    grid-area: aside;
+    padding: 0;
+    width: 40rem;
+  }
+
+  aside h1 {
+    width: 38.4rem;
+  }
+
+  .title-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
