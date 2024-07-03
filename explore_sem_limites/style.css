@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --font-color: #312d64;
+  --primary-color: #b52184;
+  --linear-gradient-background-0: #343193;
+  --linear-gradient-background-100: #302c63;
+
+  --font-principal: "Mulish", sans-serif;
+}
+
+body {
+  font-family: var(--font-principal);
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--font-color);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+
+header .img {
+  background-image: url("/img/astronaut_into_the_space.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  margin: auto;
+  margin-bottom: 1.8rem;
+  width: 36.4rem;
+  height: 37rem;
+}
+
+h1,
+h2 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--primary-color);
+}
+
+header p {
+  font-size: 2rem;
+  margin-bottom: 3.6rem;
+}
+
+header a img {
+  margin-bottom: 9.2rem;
+}
+
+/* MAIN */
+
+main section {
+  background-color: #ffffff;
+}
+main .articles {
+  background-color: #ffffff;
+  background: linear-gradient(
+    160deg,
+    rgba(52, 49, 147, 1) 0%,
+    rgba(48, 44, 99, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
+  padding: 5rem;
+}
+
+main section article {
+  background-color: #ffffff;
+  width: min(36.6rem, 100%);
+
+  text-align: left;
+  padding: 2.65rem;
+  border-radius: 2rem;
+}
+
+main section article img {
+  margin-bottom: 3.4rem;
+  width: 8rem;
+  height: 8rem;
+}
+main section article h3 {
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+/* A próxima parte é relativa ao Formulário */
+
+.form-group {
+  width: min(59.5rem, 90%);
+  margin: 7.8rem auto 6.5rem;
+  padding: 0 4rem 0;
+}
+
+.form-group h2 {
+  text-align: left;
+}
+
+.contact form {
+  margin: 4.3rem auto 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 2.4rem;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+
+  width: 100%;
+  height: 4.8rem;
+
+  border-radius: 1.6rem;
+  border: 1.5px solid #312d64;
+  padding: 1.2rem 1.4rem;
+}
+
+.input-wrapper input {
+  border: none;
+  width: 100%;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--font-color);
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-style: normal;
+  opacity: none;
+}
+
+textarea {
+  border-radius: 1.6rem;
+  border: 1.5px solid #312d64;
+  padding: 1.2rem 1.4rem;
+  color: var(--font-color);
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  text-align: left;
+  width: 100%;
+}
+
+button {
+  width: 15.1rem;
+  height: 4.5rem;
+
+  border-radius: 1.6rem;
+  border: none;
+
+  background: linear-gradient(
+    160deg,
+    rgba(52, 49, 147, 1) 0%,
+    rgba(48, 44, 99, 1) 100%
+  );
+
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 2.4rem;
+  font-family: "Mulish", sans-serif;
+  color: #ffffff;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    160deg,
+    rgba(52, 49, 147, 1) 0%,
+    rgba(48, 44, 99, 1) 100%
+  );
+
+  height: 7.8rem;
+
+  color: #ffffff;
+
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  /* HEADER */
+  header {
+    display: grid;
+    grid-template-columns: 1fr 72rem;
+    grid-template-areas: "text image";
+    gap: 2.8rem;
+    margin-left: 8rem;
+  }
+
+  header .img {
+    grid-area: image;
+    width: 71.936rem;
+    height: 73.236rem;
+
+    background-position: top center;
+    margin: 0;
+  }
+
+  header > div {
+    grid-area: text;
+    justify-self: left;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header h1 {
+    font-size: 6rem;
+    margin: 0;
+    padding: 0;
+    margin-top: 31.2rem;
+  }
+
+  header p {
+    font-size: 3.6rem;
+    margin-bottom: 18rem;
+    padding: 0;
+  }
+
+  header a img {
+    margin-bottom: 13.6rem;
+  }
+
+  /* MAIN */
+
+  main .articles {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  /*  Estou tentando descobrir como igualar os "articles" quando diminuo a tela mantendo a mesma altura  
+     Tentarei substituir o flex pelo grid ou colocar a alguma propriedade flex pra esticar as caixas por igual
+  */
+  main section article {
+    flex: 1;
+  }
+}
